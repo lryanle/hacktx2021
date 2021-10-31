@@ -18,11 +18,13 @@ async function getBlock(req, res) {
     const rawRes = geoRes.result.addressMatches[0];
 
     console.log(rawRes);
-    const geographies = rawRes.geographies['2020 Census Blocks'][0];
+
+    const coordinates = rawRes.coordinates;
+    const geographies = rawRes.geographies['2020 Census Blocks'];
 
     const resObj = {
-        coordinates: rawRes.coordinates,
-        blockId: rawRes.geographies['2020 Census Blocks'][0]['GEOID']
+        coordinates,
+        blockCode: geographies[0]['GEOID']
     }
 
     res.status(200).send(resObj);
