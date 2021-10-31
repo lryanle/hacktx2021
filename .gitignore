@@ -1,3 +1,10 @@
+# Project-specific ignores
+data
+*.zip
+*.secrets
+*.vercel
+*.env
+
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
@@ -21,3 +28,4 @@ yarn-debug.log*
 yarn-error.log*
 
 /src/styles/reduction.css
+.vercel
